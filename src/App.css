@@ -1,0 +1,85 @@
+/* App.css */
+
+/* Base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f0f0f0; /* Light gray background */
+  color: #333;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Adjusted height */
+}
+
+.form-container {
+  width: 100%;
+  max-width: 600px; /* Adjusted maximum width */
+  background-color: #fff; /* White background */
+  border-radius: 20px; /* Increased border radius */
+  padding: 40px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.form-title {
+  font-size: 32px; /* Decreased font size */
+  font-weight: bold;
+  color: #007bff; /* Blue title color */
+  margin-bottom: 20px; /* Decreased margin */
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 20px; /* Decreased spacing between input groups */
+}
+
+.input-label {
+  font-size: 16px; /* Decreased font size */
+  font-weight: bold;
+  color: #555; /* Darker label color */
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px; /* Decreased padding */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 8px; /* Increased border radius */
+  background-color: #f9f9f9; /* Light gray background color */
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-field:hover {
+  border-color: #007bff; /* Blue border color on hover */
+}
+
+.input-field:focus {
+  border-color: #007bff; /* Blue border color on focus */
+}
+
+textarea.input-field {
+  resize: vertical;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #007bff; /* Blue button background */
+  color: #fff;
+  border: none;
+  border-radius: 8px; /* Increased border radius */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
