@@ -1,4 +1,7 @@
 /* App.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Base styles */
 * {
@@ -23,16 +26,18 @@ body {
 .form-container {
   width: 100%;
   max-width: 600px; /* Adjusted maximum width */
-  background-color: #fff; /* White background */
+  /* background-color: #fff; White background */
   border-radius: 20px; /* Increased border radius */
   padding: 40px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  margin-top: 20px;
+  
 }
 
 .form-title {
   font-size: 32px; /* Decreased font size */
   font-weight: bold;
-  color: #007bff; /* Blue title color */
+  /* color: #007bff; Blue title color */
   margin-bottom: 20px; /* Decreased margin */
   text-align: center;
 }
@@ -44,7 +49,7 @@ body {
 .input-label {
   font-size: 16px; /* Decreased font size */
   font-weight: bold;
-  color: #555; /* Darker label color */
+  /* color: #555; Darker label color */
 }
 
 .input-field {
@@ -52,7 +57,7 @@ body {
   padding: 12px; /* Decreased padding */
   border: 1px solid #ccc; /* Light gray border */
   border-radius: 8px; /* Increased border radius */
-  background-color: #f9f9f9; /* Light gray background color */
+  /* background-color: #f9f9f9; Light gray background color */
   outline: none;
   transition: border-color 0.3s ease;
 }
@@ -72,8 +77,8 @@ textarea.input-field {
 .submit-btn {
   width: 100%;
   padding: 12px;
-  background-color: #007bff; /* Blue button background */
-  color: #fff;
+  /* background-color: #007bff; Blue button background */
+  /* color: #fff; */
   border: none;
   border-radius: 8px; /* Increased border radius */
   cursor: pointer;
@@ -82,4 +87,5 @@ textarea.input-field {
 
 .submit-btn:hover {
   background-color: #0056b3; /* Darker blue on hover */
+ 
 }
