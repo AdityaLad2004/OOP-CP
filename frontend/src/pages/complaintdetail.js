@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 // import { FaUserAlt } from "react-icons/fa";
 import { FaLocationDot } from "react-icons/fa6";
@@ -12,8 +13,18 @@ import "mapbox-gl/dist/mapbox-gl.css";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import mapmarker from "../assets/map-marker.svg";
 import rapidlogo from "./../assets/rapidlogo.jpg";
+import { ImCross } from "react-icons/im";
+import { TiTick } from "react-icons/ti";
+
 const Complaintdetail = () => {
   const { id } = useParams();
+  const [signed, setSigned] = useState(false); // State to hold sign status
+
+  const toggleSign = () => {
+    setSigned(!signed); // Toggle sign status
+  };
+
+
   const details = {
     id: 1,
     name: "Nishant",
@@ -28,54 +39,94 @@ const Complaintdetail = () => {
   });
   const Timeline = () => {
     return (
-        // <div>
-        <ul className="timeline">
-        <li>
-            <div className="timeline-start timeline-box">First Macintosh computer</div>
-            <div className="timeline-middle">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 text-primary"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
+      <ol class="items-center m-2 mt-6 sm:flex gap-5">
+        <li class="relative mb-6 sm:mb-0">
+          <div class="flex items-center">
+            <div class="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+              {/* <svg
+                class="w-2.5 h-2.5 text-blue-800 dark:text-blue-300"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+              </svg> */}
+             
+              {signed ? <TiTick className="text-green-500 text-5xl font-bold"/> :  <ImCross className="text-red-500"/>}
             </div>
-            <hr className="bg-primary"/>
+            <div class="hidden ml-5 sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
+          </div>
+          <div class="mt-3 sm:pe-8">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+              Client's Signature
+            </h3>
+            <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+              Issue Raised on December 2, 2021
+            </time>
+            <p class="text-base font-normal text-gray-500 dark:text-gray-400"></p>
+          </div>
         </li>
-        <li>
-        <hr className="bg-primary"/>
-            <div className="timeline-middle">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 text-primary"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
+        <li class="relative mb-6 sm:mb-0">
+          <div class="flex items-center">
+            <div class="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+              {/* <svg
+                class="w-2.5 h-2.5 text-blue-800 dark:text-blue-300"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+              </svg> */}
+              {signed ? <TiTick className="text-green-500 text-5xl font-bold"/> :  <ImCross className="text-red-500"/>}
             </div>
-            <div className="timeline-end timeline-box">iMac</div>
-            <hr className="bg-primary"/>
+            <div class="hidden ml-5 sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div>
+          </div>
+          <div class="mt-3 sm:pe-8">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+              Final Signature
+            </h3>
+            <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+              Issue Not solved yet
+            </time>
+            <p class="text-base font-normal text-gray-500 dark:text-gray-400"></p>
+          </div>
         </li>
-        <li>
-            <hr className="bg-primary"/>
-            <div className="timeline-start timeline-box">iPod</div>
-            <div className="timeline-middle">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5 text-primary"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
+        <li class="relative mb-6 sm:mb-0">
+          <div class="flex items-center">
+            <div class="z-10 flex items-center justify-center w-6 h-6 bg-blue-100 rounded-full ring-0 ring-white dark:bg-blue-900 sm:ring-8 dark:ring-gray-900 shrink-0">
+              {/* <svg
+                class="w-2.5 h-2.5 text-blue-800 dark:text-blue-300"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+              </svg> */}
+              <TiTick className="text-green-500 text-5xl font-bold"/>
+
             </div>
-            <hr/>
+            {/* <div class="hidden sm:flex w-full bg-gray-200 h-0.5 dark:bg-gray-700"></div> */}
+          </div>
+          <div class="mt-3 sm:pe-8">
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+              Official's Signature
+            </h3>
+            <time class="block mb-2 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+              Started Working on January 5, 2022
+            </time>
+            <p class="text-base font-normal text-gray-500 dark:text-gray-400"></p>
+          </div>
         </li>
-        <li>
-            <hr/>
-            <div className="timeline-middle">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
-            </div>
-            <div className="timeline-end timeline-box">iPhone</div>
-            <hr/>
-        </li>
-        <li>
-            <hr/>
-            <div className="timeline-start timeline-box">Apple Watch</div>
-            <div className="timeline-middle">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" className="w-5 h-5"><path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
-            </div>
-        </li>
-        </ul>
-        
-    )
-  }
+      </ol>
+    );
+  };
 
   return (
     <div className="z-10">
-      <div class=" w-[60vw] h-[80vh] mt-16 mb-16 ml-[20vw] p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800/90 dark:border-gray-700">
+      <div class=" w-[60vw] h-fit min-h-[80vh] mt-16 mb-16 ml-[20vw] p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800/90 dark:border-gray-700">
         <div class="mb-5">
           {/* <label
             for="large-input"
@@ -159,8 +210,10 @@ const Complaintdetail = () => {
           </div>
         </div>
         {/* </div> */}
-      </div>
+        <div className="text-white font-semibold text-xl mt-5">Signature: </div>
         <Timeline />
+        <div role="button" className="bg-gray-700 text-white w-fit rounded-xl p-2" onClick={toggleSign}>{signed ? "Undo Signature" : "Sign the Complaint"}</div>
+      </div>
     </div>
   );
 };
